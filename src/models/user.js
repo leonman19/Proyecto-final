@@ -8,7 +8,7 @@ const userSchema = new Schema({
     password: String,
 });
 
-userSchema.methods.encruptPassword = (password) => {
+userSchema.methods.encryptPassword = (password) => {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 };
 
