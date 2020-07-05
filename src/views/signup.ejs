@@ -1,10 +1,7 @@
 <%- layout('layout/main.ejs') %>
 
-
 <div class="row">
-
     <div class="col-md-4 offset-md-4">
-
         <div class="card mt-4 text-center">
             <div class="card text-white bg-primary mb-3">
                 <h3 >SignUp</h3>
@@ -12,18 +9,22 @@
             <div class="card-body">
                 <form action="/signup" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-control"name="email" placeholder="E-mail">
+                        <input type="email" class="form-control"name="email" placeholder="E-mail" autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" placeholder="Password" class="from-control">
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Name" class="from-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="surname" placeholder="Surname" class="from-control">
+                    </div>
                     <button type="submit" class="btn btn-primary btn-block mt-4">
-                        Signup
+                        SignUp
                     </button>
                 </form>
-        
             </div>
-        
         </div>
     </div>
 </div>
