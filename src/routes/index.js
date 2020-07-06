@@ -28,10 +28,31 @@ router.post('/signin', passport.authenticate('local-signin', {
     passReqToCallback : true
 }));
 
+
+router.get('/delete', (req, res, next) =>{
+    res.render('delete');
+});
+
+router.post('/delete', passport.authenticate('local-delete', {
+    successRedirect: '/',
+    failureRedirect: '/delete',
+    passReqToCallback : true
+}));
+
 router.get('/logout', (req, res, next) => {
     req.logout();
     res.redirect('/');
 });
+
+router.get('/forgot', (req, res, next) =>{
+    res.render('forgot');
+});
+
+router.post('/forgot', passport.authenticate('local-forgot', {
+    successRedirect: '/code',
+    failureRedirect: '/forgot',
+    passReqToCallback : true
+}));
 
 router.get('/profile', isAuthenticated, (req, res, next) => {
     res.render('profile');

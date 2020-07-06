@@ -9,16 +9,19 @@
             <div class="card-body">
                 <form action="/signup" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-control"name="email" placeholder="E-mail" autofocus>
+                        <input type="email" style="text-transform: lowercase;" value=""  onkeyup="javascript:this.value=this.value.toLowerCase();" class="form-control"name="email" placeholder="E-mail" autofocus required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" placeholder="Password" class="from-control">
+                        <input type="password" name="password" placeholder="Password" class="from-control" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Name" class="from-control">
+                        <input type="text" name="name" placeholder="Name" class="from-control" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="surname" placeholder="Surname" class="from-control">
+                        <input type="text" name="surname" placeholder="Surname" class="from-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="" name="surname" placeholder="Surname" class="from-control" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block mt-4">
                         SignUp
