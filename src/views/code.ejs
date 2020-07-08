@@ -1,0 +1,22 @@
+<%- layout('layout/main.ejs') %>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card mt-4 text-center">
+            <div class="card text-white bg-primary mb-3">
+                <h3 >Recover password</h3>
+            </div>
+            <div class="card-body">
+                <form action="/code" method="POST">
+                    <div class="form-group">
+                        <input type="email" style="text-transform: lowercase;" value=""  onkeyup="javascript:this.value=this.value.toLowerCase();" class="form-control"name="email" placeholder="E-mail" autofocus required>
+                    </div>
+                    <a href="/signin">Remembered it!!!</a>
+                    <button type="submit" class="btn btn-primary btn-block mt-4">
+                        Recover
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
