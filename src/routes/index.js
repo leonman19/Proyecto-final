@@ -29,7 +29,7 @@ router.post('/signin', passport.authenticate('local-signin', {
 }));
 
 
-router.get('/delete', (req, res, next) =>{
+router.get('/delete', isAuthenticated, (req, res, next) =>{
     res.render('delete');
 });
 
@@ -44,18 +44,16 @@ router.get('/logout', (req, res, next) => {
     res.redirect('/');
 });
 
+
+router.get('/profile', isAuthenticated, (req, res, next) => {
+    res.render('profile');
+});
+
 router.get('/forgot', (req, res, next) =>{
     res.render('forgot');
 });
 
-router.post('/forgot', passport.authenticate('local-forgot', {
-    successRedirect: '/code',
-    failureRedirect: '/forgot',
-    passReqToCallback : true
-}));
-
-router.get('/profile', isAuthenticated, (req, res, next) => {
-    res.render('profile');
+router.post('/forgot', (req, res) =>{
 });
 
 function isAuthenticated(req,res, next) {

@@ -63,18 +63,3 @@ passport.use('local-delete', new localStrategy({
     }
 }));
 
-//FORGOT
-// passport.use('local-forgot', new localStrategy({
-//     usernameField: 'email',
-//     passReqToCallback: true
-//     }, async (req, email, token, done) => {
-//     const user = await User.findOne({email: email});
-//     if(!user){
-//         return done(null, false, req.flash('forgotMessage', 'No user found'));
-//     } else {
-
-
-//         // await user.remove();
-//         // done(null, user, req.flash('deleteMessage','The user has been remove'));
-//     }
-// }));
